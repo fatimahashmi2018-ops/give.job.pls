@@ -1,0 +1,7 @@
+{
+  "name": "give-job-pls",
+  "compatibility_date": "2026-11-09", // Update to the day you deploy
+  "assets": {
+    "directory": "./dist"
+  }
+}

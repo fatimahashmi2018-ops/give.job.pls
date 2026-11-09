@@ -1,0 +1,715 @@
+
+---
+const projects = [
+  {
+    number: "01",
+    title: "RB Services",
+    category: "Website Recreation",
+    description:
+      "Recreated a Webflow website, focusing on clean components, responsive layouts, and fast performance.",
+    tags: ["Webflow", "Components", "Frontend, Sanity, Cloudfare"],
+    color: "green",
+    link: "https://rb-services.fatimahashmi2018.workers.dev",
+    image: "/images/rb-services.png",
+  },
+  {
+    number: "02",
+    title: "Little Notes",
+    category: "Supabase Project",
+    description:
+      "Built a small notes application and experimented with Supabase to understand database integration and storing data.",
+    tags: ["Supabase", "Database", "CRUD"],
+    color: "peach",
+    link: "https://little-notes.fatimahashmi2018.workers.dev/signup/",
+    image: "/images/little-notes.png",
+  },
+  {
+    number: "03",
+    title: "My Little Portfolio",
+    category: "Personal Website",
+    description:
+      "Designed and built my own portfolio to experiment with visual design, layouts, and creating a personal online presence.",
+    tags: ["Design", "Frontend", "Portfolio"],
+    color: "purple",
+    link: "https://fatima.fatimahashmi2018.workers.dev/",
+    image: "/images/my-portfolio.png",
+  },
+  {
+    number: "04",
+    title: "Webflow API Experiment",
+    category: "API Integration",
+    description:
+      "Explored basic API functionality in Webflow and learned how external data and services can connect with websites.",
+    tags: ["Webflow", "API", "Integration"],
+    color: "blue",
+    link: "https://sunshine-ad9d28.webflow.io/",
+    image: "/images/api-project.png",
+  },
+];
+
+const skills = [
+  "HTML & CSS",
+  "JavaScript",
+  "Astro",
+  "Webflow",
+  "Supabase",
+  "API Integration",
+  "Responsive Design",
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="My portfolio, projects, and experiments on the web." />
+    <title>My Little Corner of the Internet</title>
+  </head>
+
+  <body>
+    <nav class="nav">
+      <a href="#" class="logo">madeby<span>me.</span> ✳</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">My work</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Hire me ↗</a>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="availability">
+            <span class="dot"></span>
+            OPEN TO OPPORTUNITIES
+          </div>
+
+          <p class="eyebrow">HELLO, INTERNET! 👋</p>
+          <h1>
+            Hey, I'm <span class="highlight">Fatima.</span>
+            <br />
+            I build things for the web<span class="star">✳</span>
+          </h1>
+
+          <p class="hero-description">
+            A curious web developer who loves building websites,
+            exploring new tools, and turning ideas into something real.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#work" class="primary-btn">Explore my work ↗</a>
+            <a href="#contact" class="secondary-btn">Let's talk!</a>
+          </div>
+
+          <div class="hero-note">
+            <span>✳</span> Learning, building & figuring things out.
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="art-card">
+            <span class="art-emoji">💻</span>
+            <p>currently building<br />something cool...</p>
+            <div class="art-decoration">✳</div>
+          </div>
+          <span class="floating flower">✿</span>
+          <span class="floating sparkle">✧</span>
+          <span class="floating heart">♡</span>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="section-label">01 / A LITTLE ABOUT ME</div>
+        <div class="about-content">
+          <h2>Not just learning.<br />Actually <span>building.</span></h2>
+          <p>
+            I enjoy experimenting with web technologies and bringing
+            ideas to life. From recreating websites to connecting
+            databases and exploring APIs, every project teaches me
+            something new.
+          </p>
+          <p>
+            I'm always curious about what's possible and excited
+            to keep improving my skills through real projects.
+          </p>
+        </div>
+      </section>
+
+      <section class="work section" id="work">
+        <div class="section-label">02 / THINGS I'VE BUILT</div>
+        <div class="work-heading">
+          <h2>A few little<br />things I've made<span>♡</span></h2>
+          <p>A collection of experiments, projects, and things I'm proud of.</p>
+        </div>
+
+        <div class="projects">
+          {projects.map((project) => (
+            <article class={`project-card ${project.color}`}>
+              <div class="project-visual">
+                <img
+                  src={project.image}
+                  alt={`${project.title} project screenshot`}
+                  loading="lazy"
+                />
+                <span class="project-number">{project.number}</span>
+              </div>
+
+              <div class="project-info">
+                <p class="project-category">{project.category}</p>
+                <h3>{project.title}</h3>
+                <p class="project-description">{project.description}</p>
+
+                <div class="tags">
+                  {project.tags.map((tag) => (
+                    <span>{tag}</span>
+                  ))}
+                </div>
+
+                <a href={project.link} class="project-link">
+                  Explore project ↗
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="skills section">
+        <div class="section-label">03 / MY TOOLKIT</div>
+        <h2>Things I like working with.</h2>
+        <p class="skills-intro">
+          Tools and technologies I've been exploring and using in my projects.
+        </p>
+
+        <div class="skill-list">
+          {skills.map((skill) => (
+            <span>{skill} ✳</span>
+          ))}
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <p class="section-label">04 / YOUR TURN</p>
+        <h2>Have something<br />cool in mind?</h2>
+        <p>
+          I'm excited to connect, collaborate, and build something
+          meaningful. Maybe we can make something great together.
+        </p>
+
+        <a href="mailto:your@email.com" class="primary-btn">
+          Let's work together ↗
+        </a>
+
+        <div class="socials">
+          <a href="https://github.com/" target="_blank">GitHub ↗</a>
+          <a href="https://linkedin.com/" target="_blank">LinkedIn ↗</a>
+          <a href="mailto:your@email.com">Email ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="#" class="logo">madeby<span>me.</span> ✳</a>
+      <p>Made with curiosity & a little bit of coffee ☕</p>
+      <p>© 2026</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+  :global(*) {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+
+  :global(body) {
+    background: #faf9f6;
+    color: #292a25;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav {
+    max-width: 1160px;
+    margin: auto;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -1px;
+  }
+
+  .logo span {
+    color: #78916c;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    font-size: 13px;
+    color: #77766f;
+  }
+
+  .nav-cta {
+    border: 1px solid #292a25;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+  }
+
+  .hero {
+    max-width: 1100px;
+    margin: auto;
+    min-height: 620px;
+    padding: 100px 32px;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #e6e4dd;
+    border-radius: 30px;
+    padding: 9px 14px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #8ca77d;
+  }
+
+  .eyebrow, .section-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #89937e;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    letter-spacing: -4px;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+
+  .highlight {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #839775;
+  }
+
+  .star {
+    color: #d7a66f;
+    font-size: 42px;
+  }
+
+  .hero-description {
+    max-width: 450px;
+    color: #77766f;
+    line-height: 1.9;
+    margin-top: 25px;
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .primary-btn, .secondary-btn {
+    display: inline-block;
+    border-radius: 40px;
+    padding: 15px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s;
+  }
+
+  .primary-btn {
+    background: #829575;
+    color: white;
+  }
+
+  .primary-btn:hover {
+    background: #657a59;
+    transform: translateY(-3px);
+  }
+
+  .secondary-btn {
+    border: 1px solid #deddd5;
+  }
+
+  .secondary-btn:hover {
+    background: #eeeee7;
+  }
+
+  .hero-note {
+    font-size: 12px;
+    color: #929087;
+    margin-top: 45px;
+  }
+
+  .hero-note span {
+    color: #d3a16c;
+  }
+
+  .hero-art {
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+
+  .art-card {
+    width: 290px;
+    height: 340px;
+    background: #e4eadf;
+    border-radius: 160px 160px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: rotate(4deg);
+  }
+
+  .art-emoji {
+    font-size: 100px;
+  }
+
+  .art-card p {
+    text-align: center;
+    line-height: 1.6;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+  }
+
+  .art-decoration {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: #829575;
+  }
+
+  .floating {
+    position: absolute;
+    font-size: 45px;
+  }
+
+  .flower {
+    top: 10px;
+    right: 0;
+    color: #d8a66f;
+  }
+
+  .sparkle {
+    bottom: 10px;
+    left: 0;
+    color: #9a9dcb;
+  }
+
+  .heart {
+    top: 45%;
+    right: -20px;
+    color: #cf928e;
+  }
+
+  .section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 32px;
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    border-top: 1px solid #e9e7df;
+  }
+
+  h2 {
+    font-size: clamp(34px, 5vw, 55px);
+    letter-spacing: -2px;
+    line-height: 1.15;
+  }
+
+  .about h2 span, .work-heading h2 span {
+    color: #829575;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .about-content p {
+    color: #77766f;
+    line-height: 1.9;
+    margin-top: 20px;
+    font-size: 15px;
+    max-width: 540px;
+  }
+
+  .work {
+    border-top: 1px solid #e9e7df;
+  }
+
+  .work-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 30px 0 55px;
+    gap: 25px;
+  }
+
+  .work-heading p {
+    color: #85847b;
+    max-width: 230px;
+    line-height: 1.7;
+    font-size: 13px;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .project-card {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #eae8e0;
+    background: white;
+    transition: 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px #292a250d;
+  }
+
+  .project-visual {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  .project-card:hover img {
+    transform: scale(1.04);
+  }
+
+  .green .project-visual { background: #e2eadd; }
+  .peach .project-visual { background: #f1e2d6; }
+  .purple .project-visual { background: #e9e3ef; }
+  .blue .project-visual { background: #e0e9eb; }
+
+  .project-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: white;
+    border-radius: 30px;
+    padding: 8px 13px;
+    font-size: 11px;
+  }
+
+  .project-info {
+    padding: 25px;
+  }
+
+  .project-category {
+    color: #829575;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .project-info h3 {
+    font-size: 25px;
+    margin: 10px 0;
+    letter-spacing: -1px;
+  }
+
+  .project-description {
+    font-size: 13px;
+    color: #85847b;
+    line-height: 1.8;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+  }
+
+  .tags span {
+    background: #f2f1eb;
+    padding: 7px 12px;
+    border-radius: 30px;
+    font-size: 10px;
+  }
+
+  .project-link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  .skills {
+    border-top: 1px solid #e9e7df;
+  }
+
+  .skills h2 {
+    font-size: 38px;
+  }
+
+  .skills-intro {
+    color: #85847b;
+    margin: 15px 0 30px;
+    font-size: 14px;
+  }
+
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .skill-list span {
+    border: 1px solid #e5e3db;
+    border-radius: 40px;
+    padding: 15px 20px;
+    font-size: 13px;
+  }
+
+  .contact {
+    background: #e8ede3;
+    max-width: 100%;
+    text-align: center;
+    padding: 100px 25px;
+  }
+
+  .contact h2 {
+    font-size: clamp(45px, 7vw, 75px);
+    margin-bottom: 25px;
+  }
+
+  .contact > p:not(.section-label) {
+    max-width: 420px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #77766f;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    font-size: 12px;
+  }
+
+  footer {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 11px;
+    color: #85847b;
+  }
+
+  @media (max-width: 700px) {
+    .nav {
+      padding: 22px;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 75px 25px;
+      text-align: left;
+    }
+
+    .hero-art {
+      margin-top: 35px;
+    }
+
+    .art-card {
+      width: 250px;
+      height: 290px;
+    }
+
+    .about {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .work-heading {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .projects {
+      grid-template-columns: 1fr;
+    }
+
+    .project-visual {
+      height: 230px;
+    }
+
+    .section {
+      padding: 75px 24px;
+    }
+
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      letter-spacing: -2px;
+    }
+  }
+</style>
